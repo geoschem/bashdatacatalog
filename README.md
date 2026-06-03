@@ -37,15 +37,15 @@ _Note: This command upgrades the bashdatacatalog if it's already installed._
     $ bashdatacatalog-fetch catalog1.csv
     ```
 
-3. Run listing queries (e.g., download all missing files with 4 parallel download streams):
+3. Run listing queries (e.g., download all missing files line by line with 4 parallel download streams):
     ```console
-    $ bashdatacatalog-list -am -f xargs-curl catalog1.csv | xargs -P 4 curl
+    $ bashdatacatalog-list -am -f xargs-curl catalog1.csv | xargs -L 1 -P 4 curl
     ```
 ## 💡 Documentation
 
-See the Wiki for documentation on using the bashdatacatalog: https://github.com/LiamBindle/bashdatacatalog/wiki.
+See the Wiki for documentation on using the bashdatacatalog: https://github.com/geoschem/bashdatacatalog/wiki.
 
-If you are a GEOS-Chem user, see the standalone instructions for GEOS-Chem users [here](https://github.com/LiamBindle/bashdatacatalog/wiki/Instructions-for-GEOS-Chem-Users).
+If you are a GEOS-Chem user, see the standalone instructions for GEOS-Chem users [here](https://github.com/geoschem/bashdatacatalog/wiki/Instructions-for-GEOS-Chem-Users).
 
 For options and arguments to the `bashdatacatalog-list` command, see
 ```console
